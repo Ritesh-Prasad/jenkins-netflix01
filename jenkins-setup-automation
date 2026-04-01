@@ -1,0 +1,35 @@
+Description:
+
+Automates the setup of a CI/CD environment on an Amazon Linux EC2 instance. This script installs and configures Jenkins, Docker, Git, and SonarQube, along with security scanning tools like Trivy. It is designed to help developers quickly provision a ready-to-use Jenkins server with integrated code quality and container scanning.
+
+Features:
+Installs Java 11 (Corretto), required for Jenkins.
+Installs and configures Jenkins with proper directories, permissions, and systemd service.
+Installs Git and Docker and sets Docker permissions for non-root usage.
+Installs Trivy, a vulnerability scanner for container images and filesystem security checks.
+Launches SonarQube in a Docker container for static code analysis.
+Provides instructions for obtaining the Jenkins initial admin password.
+Configures SonarQube token and Jenkins integration for automated code quality checks.
+Sets up SonarQube webhooks for CI/CD pipeline notifications
+
+Usage:
+Launch an Amazon Linux EC2 instance.
+Copy the script and execute it:
+
+chmod +x setup-ci-cd.sh
+./setup-ci-cd.sh
+
+Access Jenkins at http://3.111.150.56:8080.
+Access SonarQube at http://3.111.150.56:9000.
+Configure your Jenkins jobs to integrate with SonarQube using the provided token and webhook.
+
+Prerequisites:
+EC2 instance with Amazon Linux 2.
+Open ports 8080 (Jenkins) and 9000 (SonarQube) in the security group.
+Sufficient privileges to run sudo commands.
+
+Ideal For:
+Developers and DevOps engineers looking for a quick, repeatable CI/CD setup.
+Teams integrating code quality and container security scanning in their pipelines.
+Learning and experimenting with Jenkins, Docker, SonarQube, and Trivy.
+
